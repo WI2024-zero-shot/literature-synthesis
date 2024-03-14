@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  jupyter-nb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: nb-use-gpu
+    volumes:
+      - .:/home/jovyan/work
+    ports:
+      - "8888:8888"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - WANDB_PROJECT=zero_shot_litreview
+      - OPENAI_API_KEY
+      - JUPYTER_TOKEN

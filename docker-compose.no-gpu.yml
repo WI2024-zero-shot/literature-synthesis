@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  jupyter-nb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: nb-no-gpu
+    volumes:
+      - .:/home/jovyan/work
+    ports:
+      - "8888:8888"
+    environment:
+      - WANDB_PROJECT=zero_shot_litreview
+      - OPENAI_API_KEY
+      - JUPYTER_TOKEN
