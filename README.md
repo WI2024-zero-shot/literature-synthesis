@@ -2,6 +2,8 @@
 
 This is the supplied code repository to make the work completely reproducible.
 
+![Overview of the IT artifact](https://github.com/WI2024-zero-shot/literature-synthesis/blob/main/Artifact.jpg)
+
 ## How to run
 
 Copy the .env.example file to .env and fill in the missing values in order to generate OpenAI embedding baseline.
